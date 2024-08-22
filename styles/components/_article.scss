@@ -1,6 +1,11 @@
 @use "./variables" as vars;
 .main {
   width: 100%;
+  @media (min-width: 768px) and (max-width: 1140px) {
+    // padding: 0 2rem;
+    display: flex;
+    justify-content: center;
+  }
 }
 .position-container {
   width: 100%;
@@ -14,6 +19,17 @@
   background-color: #fff;
   position: absolute;
   z-index: 2;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    top: 19rem;
+    padding: 3rem;
+  }
+
+  @media (min-width: 768px) and (max-width: 1140px) {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 
 .article {
@@ -21,6 +37,19 @@
   flex-direction: column;
   align-items: center;
   gap: 0.8rem;
+
+  @media (min-width: 768px) {
+    align-items: start;
+    padding-right: 5.6rem;
+    &:not(:first-of-type) {
+      border-left: 2px solid vars.$dark-gray;
+      margin-right: auto;
+      padding-left: 2rem;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1140px) {
+    padding-right: 0rem;
+  }
 
   &__heading {
     color: vars.$dark-gray;
@@ -31,5 +60,8 @@
   }
   &__text {
     font-weight: 500;
+    @media (min-width: 768px) {
+      font-size: 2.2rem;
+    }
   }
 }
