@@ -1,0 +1,35 @@
+@use "./variables" as vars;
+.main {
+  width: 100%;
+}
+.position-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.3rem;
+  border-radius: vars.$general-border-radius;
+  padding: 2.4rem;
+  top: 16.5rem;
+  background-color: #fff;
+  position: absolute;
+  z-index: 2;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+
+  &__heading {
+    color: vars.$dark-gray;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+  }
+  &__text {
+    font-weight: 500;
+  }
+}
