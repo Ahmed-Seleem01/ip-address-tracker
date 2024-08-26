@@ -1,5 +1,5 @@
 // console.log(document.querySelector(".location-text"))
-
+let map = L.map('map')
 async function getLocationInfo(ipOrDomain) {
     const apiUrl = `https://geo.ipify.org/api/v2/country,city?apiKey=at_vKrhv4x0tDg8IstjF1nmZxDUdVuZY&ipAddress=${ipOrDomain}&domain=${ipOrDomain}`
 
@@ -47,7 +47,7 @@ function displayLocationInfo (userInfo){
 }
 
 function getLocationOnMap(location){
-    let map = L.map('map').setView([location.lat, location.lng], 13);
+     map.setView([location.lat, location.lng], 13);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 20,
